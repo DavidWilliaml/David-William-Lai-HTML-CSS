@@ -15,6 +15,8 @@ body{
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
 }
+/*-------------------------------------------------*/
+
 
 /* ----------------NAVBAR ------------------------ */
 header{
@@ -47,7 +49,7 @@ header{
   right: 12.5rem;
   top: 0;
   display: none;
-  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  background-color: hsl(206, 100%, 16%);
 
 }
 
@@ -58,36 +60,61 @@ header{
 }
 
 .links-list li a{
-  color: black;
+  color: white;
   text-decoration: none;
   padding: 1rem;
   letter-spacing: 0.2rem;
+  position: relative;
 }
 
-.links-list li:hover{
-  background-color: hsl(60, 100%, 85%);
-  border-radius: 0.3rem;
+
+.links-list li a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 1rem;
+  background-color: hsl(82, 82%, 44%);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 240ms ease-in;
 }
+
+
+.links-list li a:hover::after{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 
 .menu-button{
   list-style: none;
   margin: 0 8.1rem 0 0;
   padding: 0 0.6rem 0 0.6rem;
 }
+
+
+
 .menu-button:hover .links-list{
   display: flex;
-
 }
+
 .menu-button img{
   transition: transform 100ms ease-in;
 }
+
 .menu-button:hover img {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
-
 }
 
-/*------------------- MAIN CONTENT --------------------- */
+
+/*-------------------------------------------------------*/
+
+
+/*------------------- MAIN CONTENT ----------------------*/
 main{
   color: white;
   display: flex;
@@ -109,6 +136,8 @@ main{
 
 
 }
+
+/*-------------------------------------------------*/
 
 
 /*-------------- SECTION-ONE ---------------------*/
@@ -163,7 +192,7 @@ main{
   font-weight: bold;
   text-align: center;
 }
-/*----------------------------------------------------*/
+/*------------------------------------------------*/
 
 
 /*---------------SECTION-TWO---------------------*/
@@ -202,36 +231,28 @@ main{
   color: hsl(336, 100%, 45%);
 
 }
-.left{
-  left: -6.5rem;
-  top: 14.1rem;
-  width: 13.2rem;
-}
 
 
-.right{
-  right: -6.5rem;
-  top: 14.1rem;
-  width: 13.2rem;
+/*------------------------------------------*/
 
-}
 
 /*------------------ ELEMENT ---------------*/
 
 
 .element{
   margin-top: 5.6rem;
-  width: 75%;
-  height: 6.3rem;
+  width: 50%;
+  height: 9rem;
   display: flex;
-  justify-content: space-between;
-  align-items:flex-start;
+  justify-content: center;
+  align-items: flex-start;
 
 }
 .element p:first-of-type{
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 1rem;
   font-size: 2.5rem;
   font-weight: bolder;
   height: 5rem;
@@ -285,6 +306,8 @@ main{
                11px 11px 15px hsla(0,0%,0%,0.5);
 }
 
+/*----------------------------------------------*/
+
 
 /*----------------SIDEBAR-----------------------*/
 
@@ -324,28 +347,48 @@ main{
   color: hsl(0 0% 97%);
 
 }
-
-.button{
-  font-size: 1em;
+.bright-button{
+  font-size: 1rem;
   text-decoration: none;
   color: hsl(317 100% 54%);
-  border:  0.2rem solid hsl(317 100% 54%);
-  padding: 0.4rem 0.7rem;
-  border-radius: 0.2rem;
-  text-shadow: inset 0 0 0.125em hsl(0 0% 100% /0.3), 0 0 0.45em currentColor;
+  border: hsl(317 100% 54%) 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
   box-shadow: inset 0 0 0.5em 0 hsl(317 100% 54%), 0 0 0.5em 0 hsl(317 100% 54%);
+  position: relative;
+}
 
 
-
+.bright-button::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  background: hsl(317 100% 54%);
+  top: 115%;
+  left: 0;
+  width: 95%;
+  height: 100%;
+  transform: perspective(2em) rotateX(45deg) scale(1, 0.6);
+  filter: blur(1em);
 
 }
 
+
+.bright-button:hover{
+  background-color: hsl(317 100% 54%);
+  color: white;
+}
+
+
+
+/*-----------------------------------------------------*/
 
 
 /*----------------- CONTAINER-TWO ---------------------*/
 
 .container-two{
-  background: url('../img/clean-version.png') no-repeat center center/cover;
+  background: url('../img/clean-definitive.png') no-repeat center center/cover;
   width: 75%;
   height: 48.1rem;
   border-radius: 2rem;
@@ -354,10 +397,10 @@ main{
   justify-content: space-around;
   flex-direction: column;
   margin-top: 3.2rem;
-
-
-
 }
+
+
+
 .section-three{
   padding: 2rem;
   display: flex;
@@ -406,6 +449,7 @@ main{
 
 }
 
+/*-------------------------------------------------------*/
 
 
 /*------------------ SECTION-FOUR -------------------*/
@@ -464,7 +508,7 @@ main{
 }
 
 
-
+/*--------------------------------------------------------------*/
 
 
 /*------------------SIDEBAR-LINKS--------------------------------*/
@@ -498,15 +542,99 @@ main{
   list-style: none;
 }
 
+/*-------------------------------------------------------*/
+
+
+/*--------------------------FOOTER-----------------------*/
+footer{
+  margin-top: 3rem;
+  width: 100%;
+  height: 9rem;
+  background-color: hsl(206, 100%, 7%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer ul{
+  display: flex;
+}
+
+footer ul li{
+  list-style: none;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 1rem;
+}
+.bottom{
+  width: 0.1rem;
+  padding: 0.1rem;
+  background-color: white;
+  border-radius: 0.4rem;
+}
+
+footer ol{
+  display: flex;
+}
+footer ol li{
+  list-style: none;
+  padding: 2rem;
+}
+
+.underline{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  font-size: 1rem;
+  position: relative;
+}
+
+.underline::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: hsl(317deg 100% 54%);
+  border-radius: 1rem;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 240ms linear;
+
+}
+.underline:hover::after{
+  transform: scaleX(1);
+}
+
+
+
+footer p{
+  color: white;
+  margin-right: 2rem;
+  font-style: italic;
+  font-size: 1rem;
+}
 
 
 
 
+/* back to top, aggiustare linee,
+https://www.google.com/search?q=how+to+draw+curved+line+in+css&oq=how+to+make+lines+in+css&aqs=chrome.8.69i57j0i19i22i30l9.18627j0j7&sourceid=chrome&ie=UTF-8
+https://www.google.com/search?q=how+to+style+underline+css&oq=how+to+style+under&aqs=chrome.2.0i19j69i57j0i19l8.6446j0j7&sourceid=chrome&ie=UTF-8
+
+fare about, responsive
 
 
 
+/*prossimo commit:
 
-
+button completato
+footer completato
+under line
+changed background image
+*/
 
 
 
@@ -520,11 +648,6 @@ main{
 
 /*  color: hsl(336, 100%, 45%);*/
 
-/* VEDERE SE POSSO USARE PIÙ FONT */
-/* IDEAA DEI RIQUADRI PICCOLI CON FRECCE CHE INDICANO LE SKILL E SIANO
-BUTTON ANIMATI */
 /* ricordarsi di levare il .html dalle pagine*/
-/* ricordarsi di canva che scade*/
 /* di controllare il lavoro su github se funziona, e poi pubblicarlo */
 /* guardare video salvati in più tardi */
-/*togliere paypal */
