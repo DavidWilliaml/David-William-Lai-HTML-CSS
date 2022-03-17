@@ -612,6 +612,7 @@ footer ol li{
 
 footer p{
   color: white;
+  font-weight: bold;
   margin-right: 2rem;
   font-style: italic;
   font-size: 1rem;
@@ -619,24 +620,90 @@ footer p{
 
 
 
-
-/* back to top, aggiustare linee,
-https://www.google.com/search?q=how+to+draw+curved+line+in+css&oq=how+to+make+lines+in+css&aqs=chrome.8.69i57j0i19i22i30l9.18627j0j7&sourceid=chrome&ie=UTF-8
-https://www.google.com/search?q=how+to+style+underline+css&oq=how+to+style+under&aqs=chrome.2.0i19j69i57j0i19l8.6446j0j7&sourceid=chrome&ie=UTF-8
-
-fare about, responsive
+/*---------------------------------------------------------*/
 
 
 
-/*prossimo commit:
-
-button completato
-footer completato
-under line
-changed background image
-*/
+/*-------------------ABOUT PAGE-------------------------*/
 
 
+.main-content{
+  font-size: 16px;
+  color: hsl(0 0% 95%);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-content article{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.main-content section{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  margin: 2rem 1rem 0 1rem;
+  width: 40%;
+  height: 98%;
+  background-color: hsl(206, 100%, 7%);
+  border-radius: 0.5rem;
+}
+
+.main-content p{
+  width: 85%;
+  text-align: justify;
+  line-height: 2rem;
+  letter-spacing: 0.1rem;
+  margin:1rem 0 1rem 0;
+  padding: 1rem;
+  background-color: hsl(206, 100%, 7%);
+  border: 1px solid hsl(206, 100%, 20%);
+  border-radius: 0.3rem;
+  box-shadow: inset 0 0 0.3em  hsl(206, 100%, 20%),
+  0 0 0.3em  hsl(206, 100%, 20%);
+}
+
+p:nth-child(1){
+  width:40%;
+  text-align: center;
+  font-size: 21px;
+  font-weight: bold;
+  color: hsl(0 0% 95%);
+  border: 1px solid white;
+  background-color: hsl(0, 0%, 1%);
+  box-shadow: inset 0 0 0.3em  hsl(0 0% 98%),
+  0 0 0.3em  hsl(0 0% 85%);
+}
+
+.main-content ul{
+  width: 50%;
+  background-color: hsl(206, 100%, 7%);
+  border: 1px solid hsl(206, 100%, 20%);
+  border-radius: 0.3rem;
+  box-shadow: inset 0 0 0.3em  hsl(206, 100%, 20%),
+  0 0 0.3em  hsl(206, 100%, 20%);
+}
+
+.main-content li{
+  line-height: 2rem;
+  letter-spacing: 0.1rem;
+  margin-left: 1.5rem;
+}
+
+
+.my-photo{
+  width: 270px;
+  height: 300px;
+  margin-top: 2rem;
+}
+
+
+.academic-background ul li span{
+  text-transform: uppercase;
+  font-weight: bold;
+}
 
 
 
@@ -644,10 +711,58 @@ changed background image
 
 
 
-/*https://www.youtube.com/watch?v=6xNcXwC6ikQ*/
 
-/*  color: hsl(336, 100%, 45%);*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ricordarsi di levare il .html dalle pagine*/
-/* di controllare il lavoro su github se funziona, e poi pubblicarlo */
-/* guardare video salvati in più tardi */
