@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
+    <!-- =======================NAVBAR==========================!-->
+
     <header>
       <div class="logo">
         <a href="index.html"><img src="assets/logo/my-logo.svg" alt="logo"></a>
@@ -25,45 +27,26 @@
       </nav>
 
     </header>
-
-    <h1>Contacts</h1>
+<!-- =======================MAIN CONTENT==========================!-->
 
     <form action="" method="post">
       <div class="form">
+        <h1>Contacts</h1>
         <label for="name">Name</label>
         <input id="name" type="text">
 
         <label for='email'>Email</label>
-        <input id='email'name='email'type='email'placeholder='jhon@example.com' required/>
-
+        <input id='email'name='email'type='email'placeholder='jhon@example.com' required minlength="8"/>
+        <label for="text-area">Text Area</label>
+        <textarea id="text-area" name="text-area" rows="8" cols="80" placeholder="leave your message here"></textarea>
+        <button type="submit" name="button">Submit</button>
       </div>
-
     </form>
+        
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- =======================FOOTER==========================!-->
 
     <footer>
       <ol>
@@ -85,4 +68,4 @@
 
 
   </body>
-</html>
+  </html>

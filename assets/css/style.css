@@ -14,6 +14,10 @@
 body{
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
 }
 /*-------------------------------------------------*/
 
@@ -35,10 +39,6 @@ header{
 
 }
 
-.logo img{
-  width: 100%;
-
-}
 
 
 .links-list{
@@ -101,14 +101,15 @@ header{
   display: flex;
 }
 
-.menu-button img{
-  transition: transform 100ms ease-in;
-}
 
 .menu-button:hover img {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+.menu-button img{
+  transition: transform 100ms ease-in;
+}
+
 
 
 /*-------------------------------------------------------*/
@@ -142,56 +143,52 @@ main{
 /*-------------- SECTION-ONE ---------------------*/
 .section-one{
   margin-top: 3.1rem;
-  display: flex;
-  justify-content: center;
-  width: 55%;
-  align-items: center;
+  width: 60%;
   position: relative;
-
-}
-
-
-.line{
-  padding: 1px;
-  background-color: hsl(39, 100%, 45%);
-  width: 9.4rem;
-
-}
-.vertical{
-  transform: rotate(90deg);
-  position: absolute;
-  top: 315px;
-}
-
-
-.div-one{
   background-color: hsl(0, 0%, 10%);
   line-height: 5rem;
   border: 2px solid hsl(48, 100%, 45%);
   border-radius: 0.2rem;
+  padding: 0 1rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
 
 }
 
 
-.div-one h1{
+.vertical-line{
+  padding: 1px;
+  background-color: hsl(39, 100%, 45%);
+  width: 9.5rem;
+  transform: rotate(90deg);
+  position: absolute;
+  top: 19.8rem;
+
+
+}
+
+
+.section-one h1{
   font-size: 1.3rem;
   text-align: center;
-  width: 100%;
+  width: 20rem;
 }
 
 
-.div-one p:first-of-type{
+.section-one p:first-of-type{
   text-align: center;
   font-size: 1.9rem;
   font-weight: bold;
   color: hsl(36, 100%, 60%);
-  width: 100%;
+
 
 }
 
-.div-one p:last-of-type{
-  font-size: 1em;
+.section-one p:last-of-type{
+  font-size: 1rem;
   font-weight: bold;
   text-align: center;
   width: 100%;
@@ -203,39 +200,47 @@ main{
 /*---------------SECTION-TWO---------------------*/
 
 .section-two{
-  margin-top: 9.4rem;
   display: flex;
-  width: 40%;
   justify-content: center;
   align-items: center;
+  flex-direction:column;
+  width: 40%;
+  margin-top: 9.4rem;
   position: relative;
-
-}
-
-.div-two{
   background-color:hsl(0, 0%, 0%);
   line-height: 5rem;
   border: 2px solid hsl(48, 100%, 45%);
   border-radius: 0.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction:column;
+  padding: 1rem 1rem 0 1rem;
+}
+.left{
+  top: 14.5rem;
+  width: 6.9rem;
+  left: 6rem;
+}
+.right{
+  top: 14.5rem;
+  width: 6.9rem;
+  right: 6rem;
 }
 
-.div-two p:first-of-type{
+.section-two p:first-of-type{
   font-size: 1em;
   font-weight: bold;
   text-align: center;
 }
 
-.div-two p:last-of-type{
+.section-two p:last-of-type{
   text-align: center;
   font-size: 1.9rem;
   font-weight: bold;
   color: hsl(336, 100%, 45%);
 
 }
+
+
+
+
 
 
 /*------------------------------------------*/
@@ -254,11 +259,10 @@ main{
 
 
 }
-.element p:first-of-type{
+.element p{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 1rem;
   font-size: 2.5rem;
   font-weight: bolder;
   height: 6rem;
@@ -284,32 +288,8 @@ main{
 }
 
 
-.element p:last-of-type{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2.54rem;
-  font-weight: bolder;
-  height: 6rem;
-  width: 30%;
-  background-color: hsl(0, 0%, 0%);
-  border: 2px solid hsl(48, 100%, 45%);
-  border-radius: 0.2rem;
-  -webkit-transform: skew(-5deg, -5deg) rotate(5deg);
-  transform: skew(-5deg, -5deg) rotate(5deg);
-  -webkit-transform-origin: center center;
-  transform-origin: center center;
-  text-shadow: 1px 1px hsl(0, 0%, 30%),
-               2px 2px hsl(0, 0%, 30%),
-               3px 3px hsl(0, 0%, 30%),
-               4px 4px hsl(0, 0%, 30%),
-               5px 5px hsl(0, 0%, 30%),
-               6px 6px hsl(0, 0%, 30%),
-               7px 7px hsl(0, 0%, 30%),
-               8px 8px hsl(0, 0%, 15%),
-               9px 9px hsl(0, 0%, 15%),
-               10px 10px hsl(0, 0%, 15%),
-               11px 11px 15px hsla(0,0%,0%,0.5);
+.element p:first-of-type{
+  margin-right: 1rem;
 }
 
 /*----------------------------------------------*/
@@ -348,7 +328,7 @@ main{
 
 .sidebar p{
   width: 80%;
-  line-height: 1.6rem;
+  line-height: 2rem;
   font-size: 1rem;
   font-weight: bold;
   letter-spacing:  0.2rem;
@@ -407,7 +387,7 @@ main{
   align-items: center ;
   justify-content: space-around;
   flex-direction: column;
-  margin-top: 3.2rem;
+  margin: 3.2rem 0 3.2rem 0;
 }
 
 
@@ -569,7 +549,7 @@ main{
 
 /*--------------------------FOOTER-----------------------*/
 footer{
-  margin-top: 3rem;
+  margin-top: auto;
   width: 100%;
   height: 9rem;
   background-color: hsl(206, 100%, 7%);
@@ -646,7 +626,7 @@ footer p{
 
 
 
-/*-------------------ABOUT PAGE-------------------------*/
+/*=========================ABOUT PAGE===========================*/
 
 
 .main-content{
@@ -654,23 +634,29 @@ footer p{
   color: hsl(0 0% 95%);
   display: flex;
   flex-wrap: wrap;
+
 }
 
 .main-content article{
-  display: flex;
   justify-content: space-between;
+  margin-bottom: 3.2rem;
+  width: 50rem;
 
 }
+
 
 .main-content section{
   display: flex;
   flex-direction:column;
   align-items: center;
   margin: 2rem 1rem 0 1rem;
-  width: 40%;
   height: 98%;
   background-color: hsl(206, 100%, 7%);
   border-radius: 0.5rem;
+}
+
+.empty{
+  width: 16.9rem;
 }
 
 .main-content p{
@@ -722,7 +708,7 @@ footer p{
 }
 
 
-.academic-background ul li span{
+.skill ul li span{
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -731,9 +717,507 @@ footer p{
 
 
 
-/*-----------------------CONTACT PAGE------------------------*/
+/*==============================CONTACT PAGE===========================*/
 
-h1
+form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60rem;
+
+}
+.form{
+  width: 50%;
+  height: 50rem;
+  border: 2px solid orange;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: hsl(206, 100%, 4%);
+}
+
+.form input{
+  padding: 1rem;
+  background-color: hsl(206, 100%, 10%);
+  color: white;
+  border: 2px solid orange;
+  border-radius: 0.5rem;
+
+}
+.form label{
+  color: white;
+}
+.form h1{
+  width: 30%;
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  background-color: hsl(206, 100%, 10%);
+  border: 1px solid orange;
+  border-radius: 0.3rem;
+
+}
+
+textarea{
+  border: 2px solid orange;
+  border-radius: 0.5rem;
+  color: white;
+  background-color: hsl(206, 100%, 10%);
+}
+button{
+  padding: 1rem;
+  width: 15%;
+  background-color: hsl(206, 100%, 10%);
+  border: 2px solid orange;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  color: white;
+  font-size: 1.3rem;
+}
+
+button:hover{
+  background-color: hsl(206, 100%, 17%)
+}
+
+button:active{
+  background-color: orange;
+  color: black;
+}
+
+
+
+/*---------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/*--------------------MEDIA QUERIES SMARTPHONE-------------------------*/
+
+@media only screen and (min-width: 304px) and (max-width: 400px) {
+
+/*===================INDEX.HTML===========================*/
+  main{
+    flex-direction: column;
+  }
+
+  header{
+    height: 20rem;
+    justify-content:flex-start;
+    position: relative;
+
+-  }
+  header a{
+    position: absolute;
+    top: -7rem;
+    left: -3rem;
+
+  }
+  .menu-button{
+    display: none;
+
+  }
+
+
+  .links-list{
+    display: flex;
+    flex-direction: column;
+    left: 0rem;
+    top: 5rem;
+    width: 100%;
+    height: 100%;
+    background: none;
+  }
+
+  .links-list li{
+    display: flex;
+    line-height: 0.5rem;
+  }
+
+
+
+  /*-----------------MAIN-----------------------------*/
+
+
+  .container-one{
+    width: 100%;
+  }
+  .section-one{
+    width: 90%;
+    height: 30rem;
+    line-height: 4rem;
+  }
+
+  .section-one >p{
+    margin: 1rem 0 1rem 0;
+  }
+
+  .vertical-line{
+    top: 35rem;
+    width: 10.3rem;
+  }
+
+
+  .section-two{
+    width: 75%;
+    height: 20%;
+    line-height: 3rem;
+
+  }
+
+  .section-two >p{
+    margin-bottom: 2.5rem;
+  }
+
+  .right, .left{
+    display: none;
+  }
+
+  /*-----------------ELEMENT------------------*/
+
+  .element{
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+
+  }
+  .element p{
+    transform: none;
+    width: 90%;
+
+  }
+
+  .element p:first-of-type{
+    margin:0 0 1rem 0;
+  }
+
+  /*-------------------SIDEBAR------------------*/
+  .sidebar{
+    margin-top: 2rem;
+    width: 80%;
+  }
+  .bright-button::before{
+    transform: perspective(4em) rotateX(45deg) scale(1, 0.6);
+    filter: blur(0.6em);
+  }
+
+
+  /*----------------------------------------------------------*/
+
+
+
+  /*---------------------CONTAINER TWO----------------------*/
+
+  .container-two{
+    width: 100%;
+  }
+
+  .section-three{
+    width: 90%;
+    height: 17rem;
+    line-height: 4rem;
+  }
+
+  .div-three{
+    width: 13.7rem;
+    height: 13.7rem;
+  }
+
+  .div-three  p{
+    text-align: center;
+    line-height: 2rem;
+  }
+
+  .container-two >p{
+    width: 90%;
+    height: 4rem;
+  }
+
+  .section-four{
+    width: 90%;
+    height: 15rem;
+    flex-direction: column;
+  }
+
+  .section-four p:first-of-type,
+  .section-four p:last-of-type{
+
+    width: 80%;
+  }
+
+  .section-four p:nth-child(2){
+    width: 60%;
+  }
+
+
+  /*--------------------SIDE BAR LINKS--------------------*/
+
+  .sidebar-links {
+    width: 80%;
+    height: 20rem;
+    margin-bottom: 2rem;
+  }
+
+  /*----------------------FOOTER---------------------------*/
+
+
+  footer{
+    height: 25rem;
+    flex-direction: column;
+  }
+
+  footer ol{
+    margin-top: 3rem;
+    line-height: 1rem;
+  }
+
+  footer ol li{
+    padding: 1rem;
+  }
+
+  footer >p {
+    margin: 0 0 1rem 1rem;
+    height: 5rem;
+    line-height: 2rem;
+    color: orange;
+  }
+
+/*---------------------------------------------------------*/
+
+
+/*====================ABOUT.HTML=============================*/
+
+
+.main-content{
+  width: 100%;
+}
+.main-content  article{
+  flex-direction: column;
+}
+
+
+.main-content article section{
+  width: 100%;
+  height: 100%;
+  margin: 1rem 0 0 0;
+}
+
+.my-photo{
+  margin-left: 0.5rem;
+}
+
+.main-content article section p{
+  text-align: left;
+
+}
+.main-content p:nth-child(1){
+  width: 70%;
+}
+
+
+.main-content ul{
+  width: 85%;
+  margin-bottom: 1rem;
+}
+
+/*-------------------------------------------------------*/
+
+
+/*=======================CONTACT.HTML==========================*/
+
+form .form{
+  width: 100%;
+}
+
+.form h1{
+  width: 90%;
+}
+
+.form textarea{
+  width: 88%;
+}
+
+.form button{
+  width: 75%;
+}
+}
+
+
+/*-------------------MEDIA QUERIES TABLET-----------------------*/
+
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+
+
+/*--------------------MAIN---------------*/
+  main{
+    flex-direction: column;
+  }
+
+  .container-one{
+    width: 90%;
+  }
+
+  .section-one{
+    width: 85%;
+  }
+  .vertical-line{
+    display: none;
+ }
+
+  .section-two{
+    width: 75%;
+  }
+  .left, .right{
+    display: none;
+  }
+/*-----------------------ELEMENT-------------------*/
+  .element{
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+
+  }
+  .element p{
+    width: 85%;
+    transform: none;
+  }
+
+
+.element p:first-of-type{
+  margin:0 0 1rem 0;
+}
+
+
+/*-----------------------SIDEBAR-------------------*/
+
+ .sidebar{
+   width: 20rem;
+   margin-top: 2rem;
+ }
+
+
+ /*--------------------CONTAINER-TWO---------------*/
+
+ .container-two{
+   width:90%;
+ }
+ .section-three{
+   width: 20rem;
+ }
+ .div-three{
+   width: 16rem;
+   height: 16rem;
+ }
+ .div-three  p{
+   text-align: center;
+   line-height: 2rem;
+ }
+
+ .container-two >p{
+   width: 20rem;
+   height: 3.5rem;
+ }
+
+ .section-four{
+   width: 20rem;
+   height: 15rem;
+   flex-direction: column;
+ }
+
+ .section-four p:first-of-type,
+ .section-four p:last-of-type{
+   width: 80%;
+ }
+
+ .section-four p:nth-child(2){
+   width: 65%;
+ }
+
+/*-----------------------SIDEBAR-LINKS-------------------*/
+
+.sidebar-links{
+  width: 20rem;
+  margin-bottom: 2rem;
+}
+
+/*------------------FOOTER-----------------*/
+
+footer{
+  height: 23rem;
+  flex-direction: column;
+}
+
+footer p{
+  margin-bottom: 1rem;
+}
+
+
+/*----------------------------------------------------*/
+
+
+/*=======================ABOUT.HTML======================*/
+.main-content article{
+  width: 25rem;
+
+}
+
+.main-content section {
+  width: 22rem;
+}
+
+.my-photo{
+  margin-left: 3rem;
+}
+
+.main-content p:nth-child(1){
+  width: 13rem;
+}
+.main-content > article{
+  margin-right: 4.5rem;
+}
+
+.main-content article:nth-child(2) .experience{
+  height: 70rem;
+  padding-bottom: 2rem;
+  margin-bottom: 5rem;
+}
+
+.skill{
+  height: 15rem;
+
+}
+
+.skill ul {
+
+  margin-bottom: 3rem;
+}
+
+.empty{
+  width: 0;
+}
+
+/*===========================CONTACT.HTML====================*/
+
+.form{
+  width: 23rem;
+}
+
+.form h1{
+  width: 13rem;
+}
+
+.form textarea{
+  width: 17rem;
+}
+.form button {
+  width: 10rem;
+}
 
 
 
@@ -784,15 +1268,6 @@ h1
 
 
 
-
-
-
-
-
-
-
-
-/*<sticky footer to bottom*/
  /* active current page*/
 
 /* ricordarsi di levare il .html dalle pagine*/
