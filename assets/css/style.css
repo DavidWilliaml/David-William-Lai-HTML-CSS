@@ -125,6 +125,12 @@ main{
 
 }
 
+
+/*-------------------------------------------------*/
+
+
+/*-------------- SECTION-ONE ---------------------*/
+
 .container-one{
   margin-top: 3.1rem;
   background: url('../img/code.svg')  no-repeat center center/cover;
@@ -133,14 +139,10 @@ main{
   display: flex;
   align-items: center;
   flex-direction: column;
-
-
 }
 
-/*-------------------------------------------------*/
 
 
-/*-------------- SECTION-ONE ---------------------*/
 .section-one{
   margin-top: 3.1rem;
   width: 60%;
@@ -157,19 +159,6 @@ main{
 
 
 }
-
-
-.vertical-line{
-  padding: 1px;
-  background-color: hsl(39, 100%, 45%);
-  width: 9.5rem;
-  transform: rotate(90deg);
-  position: absolute;
-  top: 19.8rem;
-
-
-}
-
 
 .section-one h1{
   font-size: 1.3rem;
@@ -194,6 +183,21 @@ main{
   width: 100%;
 
 }
+
+
+
+.vertical-line{
+  padding: 1px;
+  background-color: hsl(39, 100%, 45%);
+  width: 9.5rem;
+  transform: rotate(90deg);
+  position: absolute;
+  top: 19.8rem;
+
+
+}
+
+
 /*------------------------------------------------*/
 
 
@@ -232,8 +236,8 @@ main{
 
 .section-two p:last-of-type{
   text-align: center;
-  font-size: 1.9rem;
   font-weight: bold;
+  font-size: 1.9rem;
   color: hsl(336, 100%, 45%);
 
 }
@@ -384,7 +388,7 @@ main{
   height: 51rem;
   border-radius: 2rem;
   display: flex;
-  align-items: center ;
+  align-items: center;
   justify-content: space-around;
   flex-direction: column;
   margin: 3.2rem 0 3.2rem 0;
@@ -420,7 +424,7 @@ main{
   0 0 0.5em 0 hsl(317 100% 54%);
 }
 
-.div-three > p{
+.div-three p{
   font-size: 0.9rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -461,21 +465,28 @@ main{
 
 }
 
-.section-four p:first-of-type{
-  width: 33%;
+.section-four p:first-of-type,
+.section-four p:last-of-type{
   text-align: center;
   font-size: 1.3rem;
   font-weight: bold;
-  color:orange;
   background-color: black;
+  color:orange;
   padding: 0.7rem;
   border-radius: 0.2rem;
   box-shadow: inset 0 0 0.5em 0 orange,
   0 0 0.5em 0 orange;
 }
 
+.section-four p:first-of-type{
+  width: 33%;
 
+}
 
+.section-four p:last-of-type{
+  width: 30%;
+
+}
 
 .section-four p:nth-child(2){
   width: 15%;
@@ -493,19 +504,9 @@ main{
 
 
 
-.section-four p:last-of-type{
-  width: 30%;
-  text-align: center;
-  font-size: 1.3rem;
-  font-weight: bold;
-  background-color: black;
-  color: orange;
-  padding: 0.7rem;
-  border-radius: 0.2rem;
-  margin-right: 0.7rem;
-  box-shadow: inset 0 0 0.5em 0 orange,
-  0 0 0.5em 0 orange;
-}
+
+
+
 
 
 /*--------------------------------------------------------------*/
@@ -528,7 +529,7 @@ main{
   flex-direction: column;
 }
 
-.sidebar-links > p{
+.sidebar-links  p{
   width: 50%;
   text-align: center;
   padding: 0.5rem;
@@ -556,23 +557,6 @@ footer{
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-footer ul{
-  display: flex;
-}
-
-footer ul li{
-  list-style: none;
-  padding: 0.5rem;
-  margin-right: 0.5rem;
-  border-radius: 1rem;
-}
-.bottom{
-  width: 0.1rem;
-  padding: 0.1rem;
-  background-color: white;
-  border-radius: 0.4rem;
 }
 
 footer ol{
@@ -611,6 +595,22 @@ footer ol li{
 }
 
 
+footer ul{
+  display: flex;
+}
+
+footer ul li{
+  list-style: none;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 1rem;
+}
+.bottom{
+  width: 0.1rem;
+  padding: 0.1rem;
+  background-color: white;
+  border-radius: 0.4rem;
+}
 
 footer p{
   color: white;
@@ -619,6 +619,9 @@ footer p{
   font-style: italic;
   font-size: 1rem;
 }
+
+
+
 
 
 
@@ -638,8 +641,7 @@ footer p{
 }
 
 .main-content article{
-  justify-content: space-between;
-  margin-bottom: 3.2rem;
+  margin: 2rem 0 3.2rem 0;
   width: 50rem;
 
 }
@@ -649,7 +651,8 @@ footer p{
   display: flex;
   flex-direction:column;
   align-items: center;
-  margin: 2rem 1rem 0 1rem;
+  padding-bottom: 1.5rem;
+  margin: 0 1rem 0 1rem;
   height: 98%;
   background-color: hsl(206, 100%, 7%);
   border-radius: 0.5rem;
@@ -803,6 +806,9 @@ button:active{
 @media only screen and (min-width: 304px) and (max-width: 400px) {
 
 /*===================INDEX.HTML===========================*/
+
+
+/*------------------HEADER-----------------------------*/
   main{
     flex-direction: column;
   }
@@ -956,7 +962,7 @@ button:active{
   }
 
 
-  /*--------------------SIDE BAR LINKS--------------------*/
+  /*--------------------SIDEBAR LINKS--------------------*/
 
   .sidebar-links {
     width: 80%;
@@ -1026,7 +1032,6 @@ button:active{
   margin-bottom: 1rem;
 }
 
-/*-------------------------------------------------------*/
 
 
 /*=======================CONTACT.HTML==========================*/
@@ -1053,6 +1058,7 @@ form .form{
 
 @media only screen and (min-width: 401px) and (max-width: 960px) {
 
+/*======================INDEX.HTML=============================*/
 
 /*--------------------MAIN---------------*/
   main{
@@ -1089,9 +1095,9 @@ form .form{
   }
 
 
-.element p:first-of-type{
-  margin:0 0 1rem 0;
-}
+  .element p:first-of-type{
+    margin:0 0 1rem 0;
+  }
 
 
 /*-----------------------SIDEBAR-------------------*/
@@ -1162,13 +1168,21 @@ footer p{
 
 
 /*=======================ABOUT.HTML======================*/
+
+.main-content{
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+
+}
 .main-content article{
-  width: 25rem;
+  width: 80%;
 
 }
 
 .main-content section {
-  width: 22rem;
+  width: 100%;
+  margin: 0;
 }
 
 .my-photo{
@@ -1178,14 +1192,15 @@ footer p{
 .main-content p:nth-child(1){
   width: 13rem;
 }
-.main-content > article{
-  margin-right: 4.5rem;
-}
 
 .main-content article:nth-child(2) .experience{
   height: 70rem;
   padding-bottom: 2rem;
   margin-bottom: 5rem;
+}
+
+.main-content ul{
+  width: 75%;
 }
 
 .skill{
@@ -1195,7 +1210,7 @@ footer p{
 
 .skill ul {
 
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .empty{
@@ -1217,6 +1232,112 @@ footer p{
 }
 .form button {
   width: 10rem;
+}
+
+}
+
+
+
+/*------------------MEDIA QUERIES DESKTOP-------------------*/
+
+@media only screen and (min-width: 961px) and (max-width: 1669px) {
+
+  /*===================INDEX.HTML===========================*/
+
+/*-------------------------MAIN-----------------------------*/
+
+.section-one{
+  width: 35rem;
+
+}
+  .section-two{
+    width: 35rem;
+  }
+
+  .vertical-line{
+    display: none;
+ }
+
+
+
+
+  /*----------------ELEMENT-------------------------*/
+
+
+
+  .element{
+    width: 35rem;
+  }
+  .element p{
+    width: 30rem;
+  }
+/*-----------------SIDEBAR--------------------------*/
+
+  .sidebar{
+    width: 14rem;
+    height: 40rem;
+  }
+
+  .bright-button::before{
+    transform: perspective(4em) rotateX(45deg) scale(1, 0.6);
+    filter: blur(0.6em);
+  }
+
+
+/*-----------------------CONTAINER-TWO------------------------*/
+
+.section-three{
+  width: 30rem;
+}
+
+.div-three{
+  width: 21rem;
+  height: 21rem;
+}
+.container-two > p{
+  width: 29rem;
+}
+
+.section-four{
+  width: 30rem;
+}
+
+.section-four p:nth-child(2){
+  width: 6rem;
+}
+
+/*---------------------------SIDEBAR-LINKS---------------*/
+
+.sidebar-links{
+  width: 14rem;
+  height
+}
+
+
+/*======================ABOUT.HTML=============================*/
+
+.main-content {
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+.empty{
+  width: 0;
+}
+
+
+/*===============CONTACT.HTML================================*/
+.form h1{
+  width: 25rem;
+}
+.form textarea{
+  width: 25rem;
+}
+
+.form button{
+  width: 15rem;
 }
 
 
