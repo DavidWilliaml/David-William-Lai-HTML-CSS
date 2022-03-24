@@ -27,14 +27,16 @@ header{
   background-color: hsl(206, 100%, 5%);
   height: 9.4rem;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 
 }
+
 .navbar{
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 100%;
+  width: 50rem;
   height: 9.4rem;
 
 }
@@ -42,14 +44,16 @@ header{
 
 
 .links-list{
-  align-items: center;
   padding: 3.2rem;
   height: 9.4rem;
+  display: flex;
+  align-items: center;
   position: absolute;
-  right: 12.5rem;
-  top: 0;
-  display: none;
+  right: 15rem;
+  top: -100%;
   background-color: hsl(206, 100%, 16%);
+  transition: .4s ease-out;
+
 
 }
 
@@ -67,6 +71,12 @@ header{
   position: relative;
 }
 
+.links-list li a:hover::after{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
 
 .links-list li a::after{
   content: "";
@@ -82,33 +92,29 @@ header{
   transition: transform 240ms ease-in;
 }
 
-
-.links-list li a:hover::after{
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-
 .menu-button{
-  list-style: none;
   margin: 0 8.1rem 0 0;
   padding: 0 0.6rem 0 0.6rem;
+  cursor: pointer;
 }
 
-
-
-.menu-button:hover .links-list{
-  display: flex;
+#check{
+  display: none;
 }
 
+#check:checked ~ ul{
+  top: 0;
+}
 
-.menu-button:hover img {
+.menu-button:active img {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+
 .menu-button img{
-  transition: transform 100ms ease-in;
+  transition:  transform 100ms ease-in;
 }
+
 
 
 
@@ -805,48 +811,66 @@ button:active{
 
 @media only screen and (min-width: 304px) and (max-width: 400px) {
 
-/*===================INDEX.HTML===========================*/
+  /*===================INDEX.HTML===========================*/
 
 
-/*------------------HEADER-----------------------------*/
+  /*------------------HEADER-----------------------------*/
   main{
     flex-direction: column;
   }
 
   header{
-    height: 20rem;
-    justify-content:flex-start;
-    position: relative;
-
--  }
-  header a{
-    position: absolute;
-    top: -7rem;
-    left: -3rem;
+    height: 29rem;
+    flex-direction: column;
+    justify-content: flex-start;
 
   }
-  .menu-button{
+
+  header > a{
+    height: 15rem;
+  }
+
+
+  .navbar{
+    display: flex;
+    justify-content: center;
+
+  }
+
+
+
+  label{
     display: none;
-
   }
-
 
   .links-list{
-    display: flex;
-    flex-direction: column;
-    left: 0rem;
-    top: 5rem;
+    position: static;
     width: 100%;
-    height: 100%;
+    line-height: 0.5rem;
     background: none;
+    flex-direction: column;
+    transition: none;
+  }
+
+
+  .links-list li a:hover::after,
+  .links-list li a::after{
+    content: none;
   }
 
   .links-list li{
-    display: flex;
-    line-height: 0.5rem;
+    color: orange;
+    border: 2px solid hsl(48, 100%, 45%);
+    border-radius: 0.2rem;
+    box-shadow: inset 0 0 0.6rem 0 hsl(48, 100%, 45%),
+    0 0 0.6rem 0 hsl(48, 100%, 45%);
+    margin-bottom: 0.5rem;
+    border-radius: 0.3rem;
   }
 
-
+  .links-list li a{
+    color: orange;
+  }
 
   /*-----------------MAIN-----------------------------*/
 
@@ -994,245 +1018,306 @@ button:active{
     color: orange;
   }
 
-/*---------------------------------------------------------*/
+  /*---------------------------------------------------------*/
 
 
-/*====================ABOUT.HTML=============================*/
+  /*====================ABOUT.HTML=============================*/
 
 
-.main-content{
-  width: 100%;
+  .main-content{
+    width: 100%;
+  }
+  .main-content  article{
+    flex-direction: column;
+  }
+
+
+  .main-content article section{
+    width: 100%;
+    height: 100%;
+    margin: 1rem 0 0 0;
+  }
+
+  .my-photo{
+    margin-left: 0.5rem;
+  }
+
+  .main-content article section p{
+    text-align: left;
+
+  }
+  .main-content p:nth-child(1){
+    width: 70%;
+  }
+
+
+  .main-content ul{
+    width: 85%;
+    margin-bottom: 1rem;
+  }
+
+
+
+  /*=======================CONTACT.HTML==========================*/
+
+  form .form{
+    width: 100%;
+  }
+
+  .form h1{
+    width: 90%;
+  }
+
+  .form textarea{
+    width: 88%;
+  }
+
+  .form button{
+    width: 75%;
+  }
 }
-.main-content  article{
-  flex-direction: column;
-}
-
-
-.main-content article section{
-  width: 100%;
-  height: 100%;
-  margin: 1rem 0 0 0;
-}
-
-.my-photo{
-  margin-left: 0.5rem;
-}
-
-.main-content article section p{
-  text-align: left;
-
-}
-.main-content p:nth-child(1){
-  width: 70%;
-}
-
-
-.main-content ul{
-  width: 85%;
-  margin-bottom: 1rem;
-}
 
 
 
-/*=======================CONTACT.HTML==========================*/
 
-form .form{
-  width: 100%;
-}
 
-.form h1{
-  width: 90%;
-}
 
-.form textarea{
-  width: 88%;
-}
 
-.form button{
-  width: 75%;
-}
-}
+
+
+
+
+
+
 
 
 /*-------------------MEDIA QUERIES TABLET-----------------------*/
 
 @media only screen and (min-width: 401px) and (max-width: 960px) {
 
-/*======================INDEX.HTML=============================*/
+  /*======================INDEX.HTML=============================*/
 
-/*--------------------MAIN---------------*/
-  main{
+  /*-----------------------HEADER------------------------------*/
+  header{
+    height: 27.5rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+  }
+
+  header > a{
+    height: 15rem;
+  }
+  .navbar{
+    display: flex;
+    justify-content: center;
+
+  }
+
+
+  label{
+    display: none;
+  }
+
+  .links-list{
+    position: static;
+    line-height: 0.5rem;
+    background: none;
+    flex-direction: column;
+    transition: none;
+
+  }
+  .links-list li a:hover::after,
+  .links-list li a::after{
+    content: none;
+  }
+
+  .links-list li{
+    background-color: hsl(0 0% 0%);
+    border: 2px solid hsl(82, 82%, 44%);
+    box-shadow: inset 0 0 0.5em 0 hsl(82, 82%, 44%),
+    0 0 0.5em 0 hsl(82, 82%, 44%);
+    border-radius: 0.3rem;
+    margin-bottom: 0.3rem;
+
+  }
+
+
+
+  /*--------------------MAIN---------------*/
+    main{
+      flex-direction: column;
+    }
+
+    .container-one{
+      width: 90%;
+    }
+
+    .section-one{
+      width: 85%;
+    }
+    .vertical-line{
+      display: none;
+   }
+
+    .section-two{
+      width: 75%;
+    }
+    .left, .right{
+      display: none;
+    }
+  /*-----------------------ELEMENT-------------------*/
+    .element{
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+
+    }
+    .element p{
+      width: 85%;
+      transform: none;
+    }
+
+
+    .element p:first-of-type{
+      margin:0 0 1rem 0;
+    }
+
+
+  /*-----------------------SIDEBAR-------------------*/
+
+   .sidebar{
+     width: 20rem;
+     margin-top: 2rem;
+   }
+
+
+   /*--------------------CONTAINER-TWO---------------*/
+
+   .container-two{
+     width:90%;
+   }
+   .section-three{
+     width: 20rem;
+   }
+   .div-three{
+     width: 16rem;
+     height: 16rem;
+   }
+   .div-three  p{
+     text-align: center;
+     line-height: 2rem;
+   }
+
+   .container-two >p{
+     width: 20rem;
+     height: 3.5rem;
+   }
+
+   .section-four{
+     width: 20rem;
+     height: 15rem;
+     flex-direction: column;
+   }
+
+   .section-four p:first-of-type,
+   .section-four p:last-of-type{
+     width: 80%;
+   }
+
+   .section-four p:nth-child(2){
+     width: 65%;
+   }
+
+  /*-----------------------SIDEBAR-LINKS-------------------*/
+
+  .sidebar-links{
+    width: 20rem;
+    margin-bottom: 2rem;
+  }
+
+  /*------------------FOOTER-----------------*/
+
+  footer{
+    height: 23rem;
     flex-direction: column;
   }
 
-  .container-one{
-    width: 90%;
+  footer p{
+    margin-bottom: 1rem;
   }
 
-  .section-one{
-    width: 85%;
-  }
-  .vertical-line{
-    display: none;
- }
 
-  .section-two{
+  /*----------------------------------------------------*/
+
+
+  /*=======================ABOUT.HTML======================*/
+
+  .main-content{
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+  }
+  .main-content article{
+    width: 80%;
+
+  }
+
+  .main-content section {
+    width: 100%;
+    margin: 0;
+  }
+
+  .my-photo{
+    margin-left: 3rem;
+  }
+
+  .main-content p:nth-child(1){
+    width: 13rem;
+  }
+
+  .main-content article:nth-child(2) .experience{
+    height: 70rem;
+    padding-bottom: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .main-content ul{
     width: 75%;
   }
-  .left, .right{
-    display: none;
-  }
-/*-----------------------ELEMENT-------------------*/
-  .element{
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
+
+  .skill{
+    height: 15rem;
 
   }
-  .element p{
-    width: 85%;
-    transform: none;
+
+  .skill ul {
+
+    margin-bottom: 1rem;
   }
 
-
-  .element p:first-of-type{
-    margin:0 0 1rem 0;
+  .empty{
+    width: 0;
   }
 
+  /*===========================CONTACT.HTML====================*/
 
-/*-----------------------SIDEBAR-------------------*/
+  .form{
+    width: 23rem;
+  }
 
- .sidebar{
-   width: 20rem;
-   margin-top: 2rem;
- }
+  .form h1{
+    width: 13rem;
+  }
 
-
- /*--------------------CONTAINER-TWO---------------*/
-
- .container-two{
-   width:90%;
- }
- .section-three{
-   width: 20rem;
- }
- .div-three{
-   width: 16rem;
-   height: 16rem;
- }
- .div-three  p{
-   text-align: center;
-   line-height: 2rem;
- }
-
- .container-two >p{
-   width: 20rem;
-   height: 3.5rem;
- }
-
- .section-four{
-   width: 20rem;
-   height: 15rem;
-   flex-direction: column;
- }
-
- .section-four p:first-of-type,
- .section-four p:last-of-type{
-   width: 80%;
- }
-
- .section-four p:nth-child(2){
-   width: 65%;
- }
-
-/*-----------------------SIDEBAR-LINKS-------------------*/
-
-.sidebar-links{
-  width: 20rem;
-  margin-bottom: 2rem;
-}
-
-/*------------------FOOTER-----------------*/
-
-footer{
-  height: 23rem;
-  flex-direction: column;
-}
-
-footer p{
-  margin-bottom: 1rem;
-}
-
-
-/*----------------------------------------------------*/
-
-
-/*=======================ABOUT.HTML======================*/
-
-.main-content{
-  align-items: center;
-  flex-wrap: nowrap;
-  flex-direction: column;
-
-}
-.main-content article{
-  width: 80%;
-
-}
-
-.main-content section {
-  width: 100%;
-  margin: 0;
-}
-
-.my-photo{
-  margin-left: 3rem;
-}
-
-.main-content p:nth-child(1){
-  width: 13rem;
-}
-
-.main-content article:nth-child(2) .experience{
-  height: 70rem;
-  padding-bottom: 2rem;
-  margin-bottom: 5rem;
-}
-
-.main-content ul{
-  width: 75%;
-}
-
-.skill{
-  height: 15rem;
-
-}
-
-.skill ul {
-
-  margin-bottom: 1rem;
-}
-
-.empty{
-  width: 0;
-}
-
-/*===========================CONTACT.HTML====================*/
-
-.form{
-  width: 23rem;
-}
-
-.form h1{
-  width: 13rem;
-}
-
-.form textarea{
-  width: 17rem;
-}
-.form button {
-  width: 10rem;
-}
+  .form textarea{
+    width: 17rem;
+  }
+  .form button {
+    width: 10rem;
+  }
 
 }
 
@@ -1244,101 +1329,116 @@ footer p{
 
   /*===================INDEX.HTML===========================*/
 
-/*-------------------------MAIN-----------------------------*/
+  /*---------------------NAVBAR-----------------------------*/
 
-.section-one{
-  width: 35rem;
+  .navbar .links-list{
+    right: 5rem;
+  }
 
-}
+
+  .menu-button{
+    margin: 0;
+  }
+
+  /*-------------------------MAIN-----------------------------*/
+
+  .section-one{
+    width: 35rem;
+
+  }
   .section-two{
     width: 35rem;
   }
 
-  .vertical-line{
-    display: none;
- }
+    .vertical-line{
+      display: none;
+   }
 
 
 
 
-  /*----------------ELEMENT-------------------------*/
+    /*----------------ELEMENT-------------------------*/
+
+    .element{
+      width: 35rem;
+    }
+    .element p{
+      width: 30rem;
+    }
 
 
+  /*-----------------SIDEBAR--------------------------*/
 
-  .element{
-    width: 35rem;
-  }
-  .element p{
+    .sidebar{
+      width: 14rem;
+      height: 40rem;
+    }
+
+    .bright-button::before{
+      transform: perspective(4em) rotateX(45deg) scale(1, 0.6);
+      filter: blur(0.6em);
+    }
+
+
+  /*-----------------------CONTAINER-TWO------------------------*/
+
+  .section-three{
     width: 30rem;
   }
-/*-----------------SIDEBAR--------------------------*/
 
-  .sidebar{
+  .div-three{
+    width: 21rem;
+    height: 21rem;
+  }
+  .container-two > p{
+    width: 29rem;
+  }
+
+  .section-four{
+    width: 30rem;
+  }
+
+  .section-four p:nth-child(2){
+    width: 6rem;
+  }
+
+  /*---------------------------SIDEBAR-LINKS---------------*/
+
+  .sidebar-links{
     width: 14rem;
-    height: 40rem;
-  }
-
-  .bright-button::before{
-    transform: perspective(4em) rotateX(45deg) scale(1, 0.6);
-    filter: blur(0.6em);
+    height
   }
 
 
-/*-----------------------CONTAINER-TWO------------------------*/
+  /*======================ABOUT.HTML=============================*/
 
-.section-three{
-  width: 30rem;
-}
+  .main-content {
+    flex-direction: column;
+    align-items: center;
 
-.div-three{
-  width: 21rem;
-  height: 21rem;
-}
-.container-two > p{
-  width: 29rem;
-}
-
-.section-four{
-  width: 30rem;
-}
-
-.section-four p:nth-child(2){
-  width: 6rem;
-}
-
-/*---------------------------SIDEBAR-LINKS---------------*/
-
-.sidebar-links{
-  width: 14rem;
-  height
-}
+  }
 
 
-/*======================ABOUT.HTML=============================*/
+  .empty{
+    width: 0;
+  }
 
-.main-content {
-  flex-direction: column;
-  align-items: center;
+
+  /*===============CONTACT.HTML================================*/
+  .form h1{
+    width: 25rem;
+  }
+  .form textarea{
+    width: 25rem;
+  }
+
+  .form button{
+    width: 15rem;
+  }
 
 }
 
 
-.empty{
-  width: 0;
-}
-
-
-/*===============CONTACT.HTML================================*/
-.form h1{
-  width: 25rem;
-}
-.form textarea{
-  width: 25rem;
-}
-
-.form button{
-  width: 15rem;
-}
 
 
 
@@ -1385,10 +1485,5 @@ footer p{
 
 
 
-
-
-
-
- /* active current page*/
 
 /* ricordarsi di levare il .html dalle pagine*/
