@@ -431,9 +431,7 @@ main{
 }
 
 .div-three p{
-  font-size: 0.9rem;
   font-weight: bold;
-  text-transform: uppercase;
   color: hsl(82, 82%, 44%);
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
