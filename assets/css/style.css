@@ -30,6 +30,7 @@ header{
   justify-content: space-between;
   align-items: center;
 
+
 }
 
 .navbar{
@@ -618,9 +619,7 @@ footer ul li{
 
 footer p{
   color: white;
-  font-weight: bold;
   margin-right: 2rem;
-  font-style: italic;
   font-size: 1rem;
 }
 
@@ -813,14 +812,15 @@ button:active{
 
 
   /*------------------HEADER-----------------------------*/
-  main{
-    flex-direction: column;
-  }
 
   header{
     height: 29rem;
     flex-direction: column;
     justify-content: flex-start;
+    position: sticky;
+    top:0;
+    z-index: 1;
+
 
   }
 
@@ -832,6 +832,7 @@ button:active{
   .navbar{
     display: flex;
     justify-content: center;
+
 
   }
 
@@ -871,6 +872,11 @@ button:active{
   }
 
   /*-----------------MAIN-----------------------------*/
+
+  main{
+    flex-direction: column;
+  }
+
 
 
   .container-one{
